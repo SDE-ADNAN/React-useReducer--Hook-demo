@@ -18,9 +18,12 @@ const reducer = (state,action)=>{
 }
 
 function App() {
+  const [state,dispatch]=useReducer(reducer,initialState);
   return (
     <div className="App">
-      
+      <h1>{state}</h1>
+      <button onClick={()=>{dispatch({type:"INCREMENT"})}}>INCREMENT</button>
+      <button onClick={()=>{dispatch({type:"DECREMENT"})}}>DECREMENT</button>
     </div>
   );
 }
